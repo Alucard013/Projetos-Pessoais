@@ -1,0 +1,31 @@
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 0 0 15px 15px;
+}
+
+
+/* Estilizando os links da nav top */
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+
+/* Colocando um hover na nav */
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.topnav a:active{
+    box-shadow: 0 1px #000000;
+    transform: translateY(5px);
+    border-radius: 10px 10px 0px 0px;
+}

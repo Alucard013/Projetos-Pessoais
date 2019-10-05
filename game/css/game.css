@@ -1,0 +1,16 @@
+body{
+    margin: 0;
+}
+.box{
+    background-image: url('../img/background.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+    width: 100vw;
+}
+.cardS{
+    float: left;
+}
+.cardN{
+    float: right;
+}

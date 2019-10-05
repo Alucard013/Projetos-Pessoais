@@ -1,6 +1,0 @@
-class train{
-
-  constructor(){
-    
-  }
-}

@@ -15,8 +15,8 @@
   </div>
   
   <div class="topnav">
-    <a href="#solucao">o que é?</a>
-    <a href="#">Como participar</a>
+    <a href="#sobre">o que é?</a>
+    <a href="#jogo">Sobre o jogo</a>
     <a href="#">Contato</a>
     <a href="#" style="float:right">Login</a>
     <a href="#" style="float:right">Cadastrar-se</a>
@@ -24,42 +24,71 @@
   
   <div class="box">
     <div class="coluna-esquerda">
-      <div class="card">
-        <h2>text</h2>
-        <h5>Contextualizando, Setembro 29, 2019</h5>
-        <img class="img-card" src="" alt="">
-        <p></p>
-        <p></p>
-        <p></p>
+      <div class="card" id="sobre">
+        <h2>Entenda o que é</h2>
+        <h5>Minha inspiração,19 de jul de 2016</h5>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bxWdwVmNIss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>A corrida Naruto foi um evento que aconteceu em varios lugares do mundo,um evento publico onde atraiu diversas pessoas
+          para as avenidas e parques.
+        </p>
         <p>
-          Além de todos esses requisitos, segundo um estudo do Instituto de Biociências da USP, os répteis e os anfíbios são os animais mais prejudicados pelo aquecimento global.
+          O primeiro evento ocorreu em julho de 2016, e apartir dai se popularizou e isso me inspirou a criar o jogo agora.
         </p>
+
       </div>
-      <div class="card" id="solucao">
-        <h2>Nossa solução</h2>
-        <h5>Terraios inteligentes, Setembro 29, 2019</h5>
-        <img class="img-card" src="" alt="">
-        <p>Utilizamos o sensor DHT11 para medir os dados do terrário em que o réptil está situado. Este sensor é um dos componentes mais utilizados em projetos que envolva a medição de temperatura e umidade de ambientes.
-        </p>
-        <p>Com os dados coletados, nossos clientes serão alertados caso alguma anormalidade esteja ocorrendo dentro do habitat de seu réptil, e poderão ver em tempo real via aplicação web a situação do terrário onde o sensor foi instalado, podendo ter um controle maior sobre a temperatura e prolongando o bem estar de seu bichinho. </p>
+      <div class="card" id="jogo">
+        <h2>Sobre o jogo</h2>
+        <h5>Naruto-Run</h5>
+        <img class="img-card" src="../img/game.jpg" alt="">
+        <p>É um jogo de corrida numa tematica retro onde o objetivo é ganhar a corrida superando seus amigos</p>
+        <p></p>
       </div>
     </div>
     <div class="coluna-direita">
       <div class="card">
-        <h2>Sobre-nós</h2>
-        <img class="img-sobre" src="" alt="">
-        <p>Equipe formado por alunos da bandtec</p>
+        <h2>Para devs</h2>
+        <img class="img-git" src="../img/git.png" alt="" onclick="repositorio()"> Ajude os desenvovedores
+        
       </div>
       
       <div class="card">
         <h3>Follow Me</h3>
-        <p>Some text..</p>
+        <img src="../img/LinkedIn.png" alt="" class="icon">
+        <img src="../img/git.png" alt="" class="icon">
+        <img src="../img/portifolio.png" alt="" class="icon">
       </div>
     </div>
   </div>
+
+  <img src="../img/konoha.png" alt=""  onclick="topFunction()" id="myBtn" >
   
   <div class="footer">
     <h2>Footer</h2>
   </div>
 </body>
 </html>
+<script>
+  var mybutton = document.getElementById("myBtn");
+  
+
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  function repositorio(){
+    window.location.href = 'https://github.com/Alucard013/Projetos-Pessoais.git';
+  }
+  </script>
+  

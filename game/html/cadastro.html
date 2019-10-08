@@ -38,29 +38,29 @@
               <option value="4">Hyuga</option>
               <option value="5">outros</option>
             </select>
-            <select id="uzumaki" style="display: none" onchange="maki()">
+            <select id="uzumaki" style="display: none" onchange="cla_uzumaki()">
                 <option>--Escolha seu personagem--</option>
-                <option value="Narutim">Naruto Uzumaki</option>
+                <option value="Naruto">Naruto Uzumaki</option>
             </select>
 
-            <select id="uchiha" style="display: none" onchange="uchi()">
+            <select id="uchiha" style="display: none" onchange="cla_uchiha()">
                 <option>--Escolha seu personagem--</option>
                 <option value="Sasuke">Sasuke Uchiha</option>
                 <option value="Itachi">Itachi Uchiha</option>
             </select>
 
-            <select id="namikaze" style="display: none" onchange="kaze()">
+            <select id="namikaze" style="display: none" onchange="cla_namikaze()">
                 <option>--Escolha seu personagem--</option>
                 <option value="Minato">Minato Namikaze</option>
             </select>
 
-            <select id="hyuga" style="display: none" onchange="riuga()">
+            <select id="hyuga" style="display: none" onchange="cla_hyuga()">
                 <option>--Escolha seu personagem--</option>
                 <option value="Neji">Neji Hyuga</option>
                 <option value="Hinata">Hinata Hyuga</option>
             </select>
 
-            <select id="outros" style="display: none" onchange="otos()">
+            <select id="outros" style="display: none" onchange="cla_outros()">
                 <option>--Escolha seu personagem--</option>
                 <option value="lee">Rock-Lee</option>
                 <option value="gaara">Gaara-do-deserto</option>
@@ -112,11 +112,41 @@
             hyuga.style.display = 'none';
         }
     }
-function uchi(){
+    
+function cla_uzumaki(){
+    if(uzumaki.value == 'Naruto'){
+        avatar.src= '../img/'+uzumaki.value+'.gif';
+    }
+}
+function cla_uchiha(){
     if(uchiha.value == 'Itachi'){
         avatar.src= '../img/'+uchiha.value+'.gif';
     }else{
         avatar.src= '../img/'+uchiha.value+'.gif';
     }
 }
+
+function cla_namikaze(){
+    if(namikaze.value == 'Minato'){
+        avatar.src= '../img/'+namikaze.value+'.gif';
+    }
+}
+
+function cla_hyuga(){
+    if(hyuga.value == 'hinata'){
+        avatar.src= '../img/'+hyuga.value+'.gif';
+    }else{
+        avatar.src= '../img/'+hyuga.value+'.gif';
+    }
+}
+
+function cla_outros(){
+    if(outros.value == 'lee'){
+        avatar.src= '../img/'+outros.value+'.gif';
+    }else{
+        avatar.src= '../img/'+outros.value+'.gif';
+    }
+}
+
+
 </script>

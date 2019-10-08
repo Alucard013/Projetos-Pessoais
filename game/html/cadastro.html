@@ -30,21 +30,86 @@
             <input type="password" id="conf_senha" placeholder="Confirmar senha..">
         
             <label for="country">Clã</label>
-            <select id="cla">
-              <option value="">-Escolha seu clã</option>
-              <option value="australia">Uzumaki</option>
-              <option value="canada">Uchiha</option>
-              <option value="usa">Otsukizuki</option>
-              <option value="usa">Nara</option>
-              <option value="usa">Hyuga</option>
+            <select id="cla" onchange="persona()">
+              <option>--Escolha seu clã--</option>
+              <option value="1">Uzumaki</option>
+              <option value="2">Uchiha</option>
+              <option value="3">Namikaze</option>
+              <option value="4">Hyuga</option>
+              <option value="5">outros</option>
             </select>
-            <select name="" id=""></select>
+            <select id="uzumaki" style="display: none">
+                <option>--Escolha seu personagem--</option>
+                <option value="Narutim">Naruto Uzumaki</option>
+            </select>
+
+            <select id="uchiha" style="display: none">
+                <option>--Escolha seu personagem--</option>
+                <option value="Sasuke">Sasuke Uchiha</option>
+                <option value="Itachi">Itachi Uchiha</option>
+            </select>
+
+            <select id="namikaze" style="display: none">
+                <option>--Escolha seu personagem--</option>
+                <option value="Minato">Minato Namikaze</option>
+            </select>
+
+            <select id="hyuga" style="display: none">
+                <option>--Escolha seu personagem--</option>
+                <option value="Neji">Neji Hyuga</option>
+                <option value="Hinata">Hinata Hyuga</option>
+            </select>
+
+            <select id="outros" style="display: none">
+                <option>--Escolha seu personagem--</option>
+                <option value="lee">Rock-Lee</option>
+                <option value="gaara">Gaara-do-deserto</option>
+            </select>
           
             <button class="btn">Cadastrar</button>
 </div>
 <div class="logo">
     <img src="../img/logo.png" alt="" width="600px">
 </div>
-<img src="../img/naruto.gif" alt="" id="narutin" >
+<img src="../img/naruto.gif" alt="" id="avatar" >
 </body>
 </html>
+<script>
+    function persona(){
+        if(cla.value == 1){
+            uzumaki.style.display = 'block';
+            uchiha.style.display = 'none';
+            namikaze.style.display = 'none';
+            hyuga.style.display = 'none';
+            outros.style.display = 'none';
+        }
+        if(cla.value == 2){
+            uchiha.style.display = 'block';
+            uzumaki.style.display = 'none';
+            namikaze.style.display = 'none';
+            hyuga.style.display = 'none';
+            outros.style.display = 'none';
+        }
+        if(cla.value == 3){
+            namikaze.style.display = 'block';
+            uzumaki.style.display = 'none';
+            uchiha.style.display = 'none';
+            hyuga.style.display = 'none';
+            outros.style.display = 'none';
+        }
+        if(cla.value == 4){
+            hyuga.style.display = 'block';
+            uzumaki.style.display = 'none';
+            uchiha.style.display = 'none';
+            namikaze.style.display = 'none';
+            outros.style.display = 'none';
+        }
+        if(cla.value == 5){
+            outros.style.display = 'block';
+            uzumaki.style.display = 'none';
+            uchiha.style.display = 'none';
+            namikaze.style.display = 'none';
+            hyuga.style.display = 'none';
+        }
+    }
+</script>

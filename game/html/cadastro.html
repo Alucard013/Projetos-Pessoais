@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="../img/konoha.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
     <title>Cadastrar-se</title>
 </head>
@@ -13,10 +14,11 @@
     <a href="#sobre">Regras</a>
     <a href="#jogo">Como jogar?</a>
     <a href="#">Feedback</a>
-    <a href="#" style="float:right">Ja tem um conta?</a>
+    <a onclick="mostrar()" style="float:right" id="a_login">Ja tem um conta?</a>
+    <a onclick="revelar()" style="float:right; display: none;" id="a_cadastro">Cadastrar-se</a>
 </div>
 
-<div class="box">
+<div class="box" id="box_cadastro">
             <label for="Pnome">Nome</label>
             <input type="text" id="nome"  placeholder="Seu nome..">
         
@@ -69,85 +71,25 @@
           
             <button class="btn">Cadastrar</button>
 </div>
+
+<div class="box" id="box_login" style="display: none;">
+
+    <label for="email">Email</label>
+    <input type="text" id="Email" placeholder="Seu email..">
+
+    <label for="senha">Senha</label>
+    <input type="password" id="senha" placeholder="Sua senha..">
+
+    <button class="btn">Logar</button>
+</div>
+
 <div class="logo">
     <img src="../img/logo.png" alt="" width="600px">
 </div>
+
+
 <img src="../img/naruto.gif" alt="" id="avatar" >
 </body>
 </html>
-<script>
-    function persona(){
-        if(cla.value == 1){
-            uzumaki.style.display = 'block';
-            uchiha.style.display = 'none';
-            namikaze.style.display = 'none';
-            hyuga.style.display = 'none';
-            outros.style.display = 'none';
-        }
-        if(cla.value == 2){
-            uchiha.style.display = 'block';
-            uzumaki.style.display = 'none';
-            namikaze.style.display = 'none';
-            hyuga.style.display = 'none';
-            outros.style.display = 'none';
-        }
-        if(cla.value == 3){
-            namikaze.style.display = 'block';
-            uzumaki.style.display = 'none';
-            uchiha.style.display = 'none';
-            hyuga.style.display = 'none';
-            outros.style.display = 'none';
-        }
-        if(cla.value == 4){
-            hyuga.style.display = 'block';
-            uzumaki.style.display = 'none';
-            uchiha.style.display = 'none';
-            namikaze.style.display = 'none';
-            outros.style.display = 'none';
-        }
-        if(cla.value == 5){
-            outros.style.display = 'block';
-            uzumaki.style.display = 'none';
-            uchiha.style.display = 'none';
-            namikaze.style.display = 'none';
-            hyuga.style.display = 'none';
-        }
-    }
-    
-function cla_uzumaki(){
-    if(uzumaki.value == 'Naruto'){
-        avatar.src= '../img/'+uzumaki.value+'.gif';
-    }
-}
-function cla_uchiha(){
-    if(uchiha.value == 'Itachi'){
-        avatar.src= '../img/'+uchiha.value+'.gif';
-    }else{
-        avatar.src= '../img/'+uchiha.value+'.gif';
-    }
-}
-
-function cla_namikaze(){
-    if(namikaze.value == 'Minato'){
-        avatar.src= '../img/'+namikaze.value+'.gif';
-    }
-}
-
-function cla_hyuga(){
-    if(hyuga.value == 'hinata'){
-        avatar.src= '../img/'+hyuga.value+'.gif';
-    }else{
-        avatar.src= '../img/'+hyuga.value+'.gif';
-    }
-}
-
-function cla_outros(){
-    if(outros.value == 'lee'){
-        avatar.src= '../img/'+outros.value+'.gif';
-    }else{
-        avatar.src= '../img/'+outros.value+'.gif';
-    }
-}
-
-
-</script>
+<script src="../js/config_avatar.js"></script>
+<script src="../js/in_out.js"></script>

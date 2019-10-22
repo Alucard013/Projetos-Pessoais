@@ -77,6 +77,12 @@ html{
     background-color: #f45d22;
     color: black;
   }
+
+  .topnav a:active{
+    box-shadow: 0 1px #000000;
+    transform: translateY(5px);
+    border-radius: 10px 10px 0px 0px;
+}     
   
   /* Criação de duas colunas utilizando o float para melhor estilização */
   /* Coluna esquerda */

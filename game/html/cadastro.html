@@ -11,20 +11,19 @@
 <body>  
 <div class="topnav">
     <a href="../html/index.html">Inicio</a>
-    <a href="#jogo">Como jogar?</a>
     <a href="#">Feedback</a>
     <a onclick="mostrar()" style="float:right" id="a_login">Ja tem um conta?</a>
-    <a onclick="revelar()" style="float:right; display: none;" id="a_cadastro">Cadastrar-se</a>
+    <a onclick="revelar()" style="float:right; display: none" id="a_cadastro">Cadastrar-se</a>
 </div>
 
 <div class="box" id="box_cadastro">
-            <label for="Pnome">Nome</label>
+            <label id="lb_cadastro_nome">Nick name</label> <label class="lb_erro" id="lb_nome"></label>
             <input type="text" id="cadastro_nome"  placeholder="Seu nome..">
         
-            <label for="email">Email</label>
+            <label id="lb_cadastro_email">Email</label> <label class="lb_erro" id="lb_email"></label>
             <input type="text" id="cadastro_email" placeholder="Seu email..">
 
-            <label for="senha">Senha</label>
+            <label id="lb_cadastro_senha">Senha</label> <label class="lb_erro" id="lb_senha"></label>
             <input type="password" id="cadastro_senha" placeholder="Sua senha..">
 
             <label for="conf_senha">Confirmar senha</label>

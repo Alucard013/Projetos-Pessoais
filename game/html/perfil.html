@@ -6,7 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Usuário</title>
 </head>
-<body>
-    
-</body>
+<body onkeypress="teclas()">
+        <div style="background-color: orangered;height: 500px; width: 100%">
+        <img src="../img/naruto.gif" alt="" id="player" style="position: absolute">
+        </div>
+    </body>
 </html>
+<script>
+ function teclas() {
+        if (event.keyCode == 97) {
+            x = document.getElementById("player");
+            x.style.left = (x.offsetLeft - 10) + "px";
+        }
+        if (event.keyCode == 100) {
+            x = document.getElementById("player");
+            x.style.left = (x.offsetLeft + 10) + "px";
+        }
+        if (event.keyCode ==119 ) {
+            x = document.getElementById("player");
+            x.style.top = (x.offsetTop - 10) + "px";
+        }
+        if (event.keyCode == 115) {
+            x = document.getElementById("player");
+            x.style.top = (x.offsetTop + 10) + "px";
+        }
+        if (event.keyCode == 32) {
+            x = document.getElementById("player");
+            x.style.Space = (x.offsetSpace + 10) + "px";
+        }
+    }
+</script>

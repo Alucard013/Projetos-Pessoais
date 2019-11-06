@@ -1,0 +1,172 @@
+
+.borda{
+    border: 2px rgb(255, 225, 0) solid;
+    width: 400px;
+    height: 550px;
+    float: right;
+    margin-right: 300px;
+    border-radius: 10%;
+    margin-top: 80px;
+    background-color: rgb(255, 255, 255);
+}
+
+.borda2{
+  border: 2px rgb(43, 255, 0) solid;
+  width: 650px;
+  height: 450px;
+  float: left;
+  margin-left: 350px;
+  border-radius: 10%;
+  margin-top: 80px;
+  background-image: url(images/background.png);
+}
+
+
+.distancia{
+    margin: 50px;
+}
+.botao_cadastro{
+background-image: url(images/tijolinho.png);
+width:180px;
+height: 60px;
+font-family: cursive;
+font-size: 22px;
+color: aliceblue;
+border-radius: 10px;
+}
+
+
+.botao_login{
+  width:110px;
+  height: 60px;
+  font-family: cursive;
+  font-size: 22px;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  margin-top: -65px;
+  background-color: rgb(31, 240, 24);
+  }
+.estrela{
+width: 100px;
+height: 80px;
+margin-top: 10px;
+position: absolute;
+top: 8%;
+left: 60%;
+margin-right: -40%;
+position: absolute;
+ -webkit-animation:spin 3s linear infinite;
+ -moz-animation:spin 3s linear infinite;
+ animation:spin 3s linear infinite;
+}
+@-moz-keyframes spin { 50% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+.fundo {
+    background-image: url(images/press_start.png);
+    background-repeat: no-repeat;
+}
+
+input {
+    width: 100%;
+  }
+
+  input[type=text] {
+    border: 2px solid rgb(51, 255, 0);
+    border-radius: 15px;
+  }
+input[type=text] {
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  input[type=text]:focus {
+    width: 100%;
+  }
+  input[type=date] {
+    border: 2px solid rgb(51, 255, 0);
+    border-radius: 15px;
+  }
+  input[type=password] {
+    border: 2px solid rgb(51, 255, 0);
+    border-radius: 15px;
+  }
+  
+  
+    .div1 {
+      width: 10px;
+      height: 10px;
+      background-color: transparent;
+      position: relative;
+      -webkit-animation-name: animacao; 
+      -webkit-animation-duration: 4s; 
+      -webkit-animation-iteration-count: 2; 
+      -webkit-animation-direction: alternate-reverse;
+      animation-name: animacao;
+      animation-duration: 4s;
+      animation-iteration-count: 2;
+      animation-direction: alternate-reverse;  
+    }
+    
+    @-webkit-keyframes animacao {
+      0%   {background-color:transparent; left:0px; top:0px;}
+      25%  {background-color:transparent; left:200px; top:0px;}
+      50%  {background-color:transparent; left:200px; top:200px;}
+      75%  {background-color:transparent; left:0px; top:200px;}
+      100% {background-color:transparent; left:0px; top:0px;}
+    }
+    
+    @keyframes animacao {
+      0%   {background-color:transparent; left:0px; top:0px;}
+      25%  {background-color:transparent; left:200px; top:0px;}
+      50%  {background-color:transparent; left:200px; top:200px;}
+      75%  {background-color:transparent; left:0px; top:200px;}
+      100% {background-color:transparent; left:0px; top:0px;}
+    }
+  
+    #test p {
+      margin-top: 10px;
+      font-size: 21px;
+      text-align: center;
+      animation: fadein 2s;
+      -moz-animation: fadein 2s; 
+      -webkit-animation: fadein 2s; 
+      -o-animation: fadein 2s; 
+      font-family: cursive;
+      color: antiquewhite;
+  }
+  @keyframes fadein {
+      from {
+          opacity:0;
+      }
+      to {
+          opacity:1;
+      }
+  }
+  @-moz-keyframes fadein { 
+      from {
+          opacity:0;
+      }
+      to {
+          opacity:1;
+      }
+  }
+  @-webkit-keyframes fadein { 
+      from {
+          opacity:0;
+      }
+      to {
+          opacity:1;
+      }
+  }
+  @-o-keyframes fadein { 
+      from {
+          opacity:0;
+      }
+      to {
+          opacity: 1;
+      }
+  }
+  
+   

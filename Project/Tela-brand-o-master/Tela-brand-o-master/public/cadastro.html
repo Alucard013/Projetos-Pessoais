@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BOOM B</title>
+    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link rel="shortcut icon" href="images/logo.png">
+
+</head>
+
+<body class="fundo" onkeydown="teclas()">
+    <div class="borda imagem">
+        <img class="estrela" src="images/estrela.png" alt="estrela" id="estrela">
+        <img src="images/super-mario-png.png" id="simbolo" style="position:absolute;">
+
+        <form onsubmit="return registrar()" id="form_cadastro" class="distancia">
+            Nome completo:
+            <br>
+            <input required minlength="4" name="Nome_completo" class="w3-input w3-animate-input" type="text" style="width:135px">
+            <br> Nome de usuário:
+            <br>
+            <input required minlength="4" name="Nome_usuario" class="w3-input w3-animate-input" type="text" style="width:135px">
+            <br> Data de nascimento:
+            <br>
+            <input required minlength="4" name="data_nascimento" class="w3-input w3-animate-input" type="date" style="width:135px">
+            <br> Senha:
+            <br>
+            <input required minlength="4" name="senha_cadastro" class="w3-input w3-animate-input" type="password" style="width:135px">
+        </form>
+        <center>
+            <button type="button" class="botao_cadastro" onclick="registrar()">Cadastre-se</button>
+            <br>
+            <a href="login.html">Fazer login</a>
+        </center>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <!--<script src="funcoes.js"></script>-->
+
+</body>
+
+</html>
+<script>
+    function teclas() {
+        if (event.keyCode == 37) {
+            x = document.getElementById("simbolo");
+            x.style.left = (x.offsetLeft - 10) + "px";
+        }
+        if (event.keyCode == 39) {
+            x = document.getElementById("simbolo");
+            x.style.left = (x.offsetLeft + 10) + "px";
+        }
+        if (event.keyCode == 38) {
+            x = document.getElementById("simbolo");
+            x.style.top = (x.offsetTop - 10) + "px";
+        }
+        if (event.keyCode == 40) {
+            x = document.getElementById("simbolo");
+            x.style.top = (x.offsetTop + 10) + "px";
+        }
+        if (event.keyCode == 32) {
+            x = document.getElementById("simbolo");
+            x.style.Space = (x.offsetSpace + 10) + "px";
+        }
+    }
+
+    function registrar() {
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        Swal.fire({
+            title: 'Carregando...',
+            text: 'Estamos efetuando o seu cadastro!',
+            imageUrl: 'images/Loading.gif',
+            imageAlt: 'Custom image',
+            showConfirmButton: false
+        })
+        fetch("../usuarios/cadastro", {
+            method: "POST",
+            body: formulario
+        }).then(function(response) {
+
+            if (response.ok) {
+
+                response.json().then(function(resposta) {
+                    if (resposta == false) {
+                        Swal.fire('Algo deu errado', 'Tente novamente', 'warning');
+                    } else {
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+
+                        Toast.fire({
+                            type: 'success',
+                            title: 'Cadastrado com sucesso!'
+                        }).then(function() {
+                            sessionStorage.id = resposta.id;
+                            window.location.href = 'login.html';
+                        })
+
+                    }
+
+                });
+            } else {
+                Swal.fire('Erro no cadastro', 'Tente novamente', 'error');
+            }
+        });
+        return false;
+    }
+</script>

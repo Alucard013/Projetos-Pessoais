@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Boom B</title>
+
+    <link rel="shortcut icon" href="images/logo.png" >
+    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="sweetalert2.min.css">
+  
+</head>
+<body>
+<div class="borda2">
+<div class="div1">
+<img src="images/mario-bros.png" style="position:absolute; margin-left: 300px; margin-top: 110px">
+</div>
+<div id="test">
+<p> A vida é um jogo, criança!</p>
+<p>Tudo depende de como você joga!...</p>
+</div>
+<form id="form_login" onsubmit="return entrar()" style="margin-top: 65px" class="distancia">
+ Nome de usuário:
+ <br>
+<input name="nome_usuario" class="w3-input w3-animate-input" type="text" style="width:135px; height: 50px;">
+<br>
+Senha:
+<br>
+<input name="senha_login" class="w3-input w3-animate-input" type="password" style="width:135px; height: 50px">
+ <br>
+ </form>
+ <center>
+ <button class="botao_login" type="button" onclick="entrar()">Entrar</button>
+</center>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script src="sweetalert2.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+</body>
+</html>
+<script>
+function verificarAutenticacao() {
+    if (sessionStorage.usuario != undefined) {
+        window.location.href = 'joginho.html';
+    } else {
+        Swal.fire('Erro no login', 'Tente novamente', 'error');
+    }
+}
+function entrar() {
+    var formulario = new URLSearchParams(new FormData(form_login));
+    Swal.fire({
+        title: 'Carregando...',
+        text: 'Estamos efetuando o seu Login!',
+        imageUrl: 'images/Loading.gif',
+        imageAlt: 'Custom image',
+        showConfirmButton: false
+    })
+    fetch("../usuarios/entrar", {
+        method: "POST",
+        body: formulario
+    }).then(function (response) {
+
+        if (response.ok) {
+            response.json().then(function (resposta) {
+                if (resposta == false) {
+                    Swal.fire('Erro no login', 'Tente novamente', 'error');
+                } else {
+
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+
+                    if(resposta[0].nome == undefined){
+                        Toast.fire({
+                            type: 'error',
+                            title: 'Por favor um nome de usuário valido!'
+                        }).then(function () {
+                            console.log(JSON.stringify(resposta));
+                            sessionStorage.id = resposta[0].id;
+                            sessionStorage.usuario = resposta[0].nome;
+                        })
+                    } else{
+
+                    Toast.fire({
+                        type: 'success',
+                        title: 'Login efetuado com sucesso!'
+                    }).then(function () {
+                        console.log(JSON.stringify(resposta));
+                        sessionStorage.setItem('qtdEnds', resposta.length);
+                        for (i = 0; i < resposta.length; i++) {
+                            sessionStorage.setItem(`end_${i+1}`, JSON.stringify(resposta[i]));
+                        }
+                        sessionStorage.id = resposta[0].id;
+                        sessionStorage.usuario = resposta[0].nome;
+                        verificarAutenticacao();
+                    })
+                }
+                }
+            });
+        } else {
+
+            Swal.fire('Erro no login', 'Tente novamente', 'error');
+        }
+    });
+
+    return false;
+}
+</script>

@@ -1,16 +1,20 @@
 body{
-    margin: 0;
-}
-.box{
-    background-image: url('../img/background.png');
-    background-repeat: no-repeat;
-    background-size: contain;
+    width: 98vw;
     height: 100vh;
+    margin: 0;
+    background-image: url('../img/Konohagakure.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.box_center{
+    height: 40vh;
     width: 100vw;
+    background-color: #f45d22;
+    margin-top: 30vh;
+    border: 2px solid #333;
+    border-radius: 15px;
 }
-.cardS{
-    float: left;
-}
-.cardN{
-    float: right;
-}
+

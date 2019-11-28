@@ -16,7 +16,7 @@ body{
 }
 
 .box_center{
-    
+    align-content: center;
     height: 40vh;
     width: 100vw;
     background-color: #f45d22;
@@ -35,7 +35,32 @@ body{
     font-family: 'njnaruto';
 }
 
+.btn_game:hover{
+    background-color: #333;
+    color: #f45d22;
+    border: 2px solid #DDDDDD;
+
+}
+
+.slt_game{
+    background-color: #DDDDDD;
+    height: 7vh;
+    width: 20vw;
+    margin: 2%;
+    border: 4px block black;
+    border-radius: 7px;
+    color: #333;
+    font-family: 'njnaruto';
+}
+
+.slt_game:hover {
+    background-color: #333;
+    color: #f45d22;
+    border: 2px solid #DDDDDD;
+}
+
 .box_btn{
+    align-content: center;
     width: 69vw;
     height: 30%;
     display: flex;

@@ -1,0 +1,40 @@
+
+            <label for="linhagem">Cla</label>
+            <select id="cla" onchange="persona()">
+              <option>--Escolha seu clã--</option>
+              <option value="1">Uzumaki</option>
+              <option value="2">Uchiha</option>
+              <option value="3">Namikaze</option>
+              <option value="4">Hyuga</option>
+              <option value="5">outros</option>
+            </select>
+
+            <select id="uzumaki" style="display: none" onchange="cla_uzumaki()">
+                <option>--Escolha seu personagem--</option>
+                <option value="Naruto">Naruto Uzumaki</option>
+            </select>
+
+            <select id="uchiha" style="display: none" onchange="cla_uchiha()">
+                <option>--Escolha seu personagem--</option>
+                <option value="Sasuke">Sasuke Uchiha</option>
+                <option value="Itachi">Itachi Uchiha</option>
+            </select>
+
+            <select id="namikaze" style="display: none" onchange="cla_namikaze()">
+                <option>--Escolha seu personagem--</option>
+                <option value="Minato">Minato Namikaze</option>
+            </select>
+
+            <select id="hyuga" style="display: none" onchange="cla_hyuga()">
+                <option>--Escolha seu personagem--</option>
+                <option value="Neji">Neji Hyuga</option>
+                <option value="Hinata">Hinata Hyuga</option>
+            </select>
+
+            <select id="outros" style="display: none" onchange="cla_outros()">
+                <option>--Escolha seu personagem--</option>
+                <option value="lee">Rock-Lee</option>
+                <option value="gaara">Gaara-do-deserto</option>
+            </select>
+
+            

@@ -27,7 +27,7 @@
                 <label >Senha</label>
                 <input type="password" name="senha" placeholder="Sua senha..">
             
-                <button class="btn" id="btn_entrar">Logar</button>
+                <button class="btn" id="btn_entrar" onclick="ir()">Logar</button>
 
             </form>    
 
@@ -37,7 +37,7 @@
                 <img src="img/logo.png" alt="" width="600px">
             </div>
             
-            <div class="div_erro"d="div_erro">
+            <div class="div_erro" id="div_erro">
                     Erro no login
             </div>
             
@@ -49,6 +49,9 @@
 
 </html>
 <script>
+    function ir(){
+        entrar();
+    }
 
     function entrar() {
         aguardar();
@@ -84,13 +87,11 @@
 
     function aguardar() {
         btn_entrar.disabled = true;
-        img_aguarde.style.display = 'block';
         div_erro.style.display = 'none';
     }
 
     function finalizar_aguardar(resposta) {
         btn_entrar.disabled = false;
-        img_aguarde.style.display= 'none';
         div_erro.style.display = 'block';
         div_erro.innerHTML = resposta;
     }

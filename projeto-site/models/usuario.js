@@ -12,21 +12,21 @@ module.exports = (sequelize, DataTypes) => {
 			primaryKey: true,
 			autoIncrement: true
 		},		
-		nome: {
+		Nome: {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		login: {
+		Email: {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		senha: {
+		Senha: {
 			type: DataTypes.STRING,
 			allowNull: false
 		}
 	}, 
 	{
-		tableName: 'usuario', 
+		tableName: 'tb_Joel', 
 		freezeTableName: true, 
 		underscored: true,
 		timestamps: false,

@@ -56,7 +56,7 @@ body{
 .slt_game:hover {
     background-color: #333;
     color: #f45d22;
-    border: 2px solid #DDDDDD;
+    border: 1px solid #DDDDDD;
 }
 
 .box_btn{
@@ -65,3 +65,18 @@ body{
     height: 30%;
     display: flex;
 }
+
+#avatar {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+  }

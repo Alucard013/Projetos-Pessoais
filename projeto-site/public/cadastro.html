@@ -16,21 +16,21 @@
 </div>
 
 <div class="box" id="box_cadastro">
-        <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-            <label id="lb_cadastro_nome">Nick name</label> <label class="lb_erro" id="lb_nome"></label>
-            <input type="text" name="nome"  placeholder="Seu Nick name..">
+    <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+        <label id="lb_cadastro_nome">Nick name</label> <label class="lb_erro" id="lb_nome"></label>
+        <input type="text" name="nome" id="Unome"  placeholder="Seu Nick name..">
         
-            <label id="lb_cadastro_email">Email</label> <label class="lb_erro" id="lb_email"></label>
-            <input type="text" name="login" placeholder="Seu email..">
+        <label id="lb_cadastro_email">Email</label> <label class="lb_erro" id="lb_email"></label>
+        <input type="text" name="login" id="Uemail" placeholder="Seu email..">
 
-            <label id="lb_cadastro_senha">Senha</label> <label class="lb_erro" id="lb_senha"></label>
-            <input type="password" name="senha" placeholder="Sua senha..">
+        <label id="lb_cadastro_senha">Senha</label> <label class="lb_erro" id="lb_senha"></label>
+        <input type="password" name="senha" id="Usenha" placeholder="Sua senha..">
 
-            <label for="conf_senha">Confirmar senha</label>
-            <input type="password" id="conf_senha" placeholder="Confirmar senha..">
-        </form>
+        <label for="conf_senha">Confirmar senha</label>
+        <input type="password" id="conf_senha" placeholder="Confirmar senha..">
         
-            <button class="btn" id="btn_entrar" >Cadastrar</button>
+        <button class="btn" id="btn_entrar" onclick="validar()" >Cadastrar</button>
+    </form>
 </div>
 
 <div class="logo">
@@ -45,6 +45,12 @@
 </body>
 </html>
 <script>
+    function validar(){
+        if(Usenha.value != conf_senha.value){
+            lb_senha.innerHTML = 'Senha invalida';
+            lb_senha.style.display= 'block';
+            Usenha.value = '';
+        }else{
 
         function cadastrar() {
             aguardar();
@@ -70,6 +76,9 @@
     
             return false;
         }
+        }
+
+    }
     
         function aguardar() {
             btn_entrar.disabled = true;

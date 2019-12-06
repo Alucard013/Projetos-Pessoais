@@ -29,7 +29,7 @@
         <label for="conf_senha">Confirmar senha</label>
         <input type="password" id="conf_senha" placeholder="Confirmar senha..">
         
-        <button class="btn" id="btn_entrar" onclick="validar()" >Cadastrar</button>
+        <button class="btn" id="btn_entrar" >Cadastrar</button>
     </form>
 </div>
 
@@ -45,15 +45,6 @@
 </body>
 </html>
 <script>
-    function validar(){
-        if(Usenha.value != conf_senha.value){
-            lb_senha.innerHTML = 'Senha invalida';
-            lb_senha.style.display= 'block';
-            Usenha.value = '';
-        }else{
-            cadastrar();
-       }
-    }
 
     function cadastrar() {
             aguardar();
@@ -68,7 +59,7 @@
                     window.location.href='login.html';
     
                 } else {
-    
+                    
                     console.log('Erro de cadastro!');
                     response.text().then(function (resposta) {
                         div_erro.innerHTML = resposta;
